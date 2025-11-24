@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:spotifyuiclone/ui/intro/intro_screen.dart';
 import 'package:spotifyuiclone/ui/splash/splash_screen.dart';
 
 class AppRoutes {
@@ -7,5 +8,6 @@ class AppRoutes {
 
   static Map<String, Widget Function(BuildContext)> getRoutes() => {
     splashScreen: (context) => SplashScreen(),
+    introScreen: (context) => IntroScreen(),
   };
 }
