@@ -13,3 +13,18 @@ InputDecoration getCreateAccountTextField() => InputDecoration(
     borderSide: BorderSide(color: AppColors.primaryColor),
   ),
 );
+InputDecoration getSearchTextField({
+  IconData mIcon = Icons.search,
+  Color bgColor = Colors.white,
+  String mText = "Search",
+}) => InputDecoration(
+  filled: true,
+  fillColor: bgColor,
+  hintText: mText,
+  hintStyle: TextStyle(color: AppColors.blackColor),
+  prefixIcon: Icon(mIcon),
+  enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(11)),
+  // focusedBorder: OutlineInputBorder(
+  //   borderRadius: BorderRadius.circular(11),
+  // ),
+);

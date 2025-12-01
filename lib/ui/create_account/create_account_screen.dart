@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:spotifyuiclone/domain/app_colors.dart';
+import 'package:spotifyuiclone/domain/app_routes.dart';
 import 'package:spotifyuiclone/domain/ui_helper.dart';
 import 'package:spotifyuiclone/ui/custom_widgets/my_custom_rounded_btn.dart';
 
@@ -73,7 +74,9 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                   if (selectedIndex < 3) {
                     selectedIndex++;
                     setState(() {});
-                  } else {}
+                  } else {
+                    Navigator.pushNamed(context, AppRoutes.chooseArtistScreen);
+                  }
                 },
               ),
             ),
