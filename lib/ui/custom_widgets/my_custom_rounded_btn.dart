@@ -26,46 +26,49 @@ class MyCustomRoundedBtn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: mWidth,
-      height: mHeight,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(30),
-        color: isOutlined ? Colors.transparent : bgColor,
-        border: isOutlined
-            ? Border.all(
-                width: 1,
-                color: isOutlined ? Colors.white : Colors.transparent,
-              )
-            : null,
-      ),
-      child: mIconPath != null
-          ? Padding(
-              padding: EdgeInsets.symmetric(horizontal: 11),
-              child: Row(
-                children: [
-                  SvgPicture.asset(mIconPath!, width: 25, height: 25),
-                  Expanded(
-                    child: Center(
-                      child: Text(
-                        text,
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: textColor
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        width: mWidth,
+        height: mHeight,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(30),
+          color: isOutlined ? Colors.transparent : bgColor,
+          border: isOutlined
+              ? Border.all(
+                  width: 1,
+                  color: isOutlined ? Colors.white : Colors.transparent,
+                )
+              : null,
+        ),
+        child: mIconPath != null
+            ? Padding(
+                padding: EdgeInsets.symmetric(horizontal: 11),
+                child: Row(
+                  children: [
+                    SvgPicture.asset(mIconPath!, width: 25, height: 25),
+                    Expanded(
+                      child: Center(
+                        child: Text(
+                          text,
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: textColor
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
+              )
+            : Center(
+                child: Text(
+                  text,
+                  style: TextStyle(color: textColor,fontSize: 16, fontWeight: FontWeight.bold),
+                ),
               ),
-            )
-          : Center(
-              child: Text(
-                text,
-                style: TextStyle(color: textColor,fontSize: 16, fontWeight: FontWeight.bold),
-              ),
-            ),
+      ),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:spotifyuiclone/domain/app_colors.dart';
+import 'package:spotifyuiclone/domain/app_routes.dart';
 import 'package:spotifyuiclone/domain/ui_helper.dart';
 import 'package:spotifyuiclone/ui/custom_widgets/my_custom_rounded_btn.dart';
 
@@ -34,14 +35,14 @@ class _IntroScreenState extends State<IntroScreen> {
                 ),
               ),
             ),
-            bottomUiLogin(),
+            bottomUiLogin(context),
           ],
         ),
       ),
     );
   }
 
-  Widget bottomUiLogin() => Container(
+  Widget bottomUiLogin(BuildContext context) => Container(
     padding: EdgeInsets.only(bottom: 34),
     width: double.infinity,
     child: Column(
@@ -49,7 +50,7 @@ class _IntroScreenState extends State<IntroScreen> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Image.asset("assets/images/Logo.png", width: 50, height: 50),
-        mSpace(),
+        mSpacer(),
         Text(
           "Millions of Songs.\nFree on Spotify.",
           textAlign: TextAlign.center,
@@ -59,22 +60,27 @@ class _IntroScreenState extends State<IntroScreen> {
             fontWeight: FontWeight.bold,
           ),
         ),
-        mSpace(),
+        mSpacer(),
         MyCustomRoundedBtn(
           bgColor: AppColors.primaryColor,
-          onTap: () {},
+          onTap: () {
+            Navigator.pushNamed(
+              context,
+              AppRoutes.createAccountScreen,
+            );
+          },
           text: "Sign up free",
         ),
-        mSpace(),
+        mSpacer(),
         MyCustomRoundedBtn(
           isOutlined: true,
           mIconPath: "assets/svg/google.svg",
-          bgColor: AppColors.secondryColor,
+          bgColor: const Color.fromARGB(255, 149, 79, 79),
           textColor: Colors.white,
           onTap: () {},
           text: "Continue with Google",
         ),
-        mSpace(),
+        mSpacer(),
         MyCustomRoundedBtn(
           isOutlined: true,
           mIconPath: "assets/svg/facebook.svg",
@@ -83,7 +89,7 @@ class _IntroScreenState extends State<IntroScreen> {
           onTap: () {},
           text: "Continue with Facebook",
         ),
-        mSpace(),
+        mSpacer(),
         MyCustomRoundedBtn(
           isOutlined: true,
           mIconPath: "assets/svg/Vector.svg",
@@ -92,7 +98,7 @@ class _IntroScreenState extends State<IntroScreen> {
           onTap: () {},
           text: "Continue with Apple",
         ),
-        mSpace(),
+        mSpacer(),
         TextButton(
           onPressed: () {},
           child: Text(
