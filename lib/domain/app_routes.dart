@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:spotifyuiclone/ui/create_account/create_account_screen.dart';
 import 'package:spotifyuiclone/ui/intro/choose_artist_screen.dart';
+import 'package:spotifyuiclone/ui/intro/choose_podcast_screen.dart';
 import 'package:spotifyuiclone/ui/intro/intro_screen.dart';
 import 'package:spotifyuiclone/ui/splash/splash_screen.dart';
 
@@ -16,6 +17,6 @@ class AppRoutes {
     introScreen: (context) => IntroScreen(),
     createAccountScreen: (context) => CreateAccountScreen(),
     chooseArtistScreen: (context) => ChooseArtistScreen(),
-    
+    choosePodcastScreen: (context) => ChoosePodcastScreen(),
   };
 }

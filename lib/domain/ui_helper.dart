@@ -18,13 +18,14 @@ InputDecoration getSearchTextField({
   Color bgColor = Colors.white,
   String mText = "Search",
 }) => InputDecoration(
+  contentPadding: EdgeInsets.zero,
   filled: true,
   fillColor: bgColor,
   hintText: mText,
   hintStyle: TextStyle(color: AppColors.blackColor),
   prefixIcon: Icon(mIcon),
   enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(11)),
-  // focusedBorder: OutlineInputBorder(
-  //   borderRadius: BorderRadius.circular(11),
-  // ),
+  focusedBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(11),
+  ),
 );
