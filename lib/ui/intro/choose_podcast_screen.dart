@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:spotifyuiclone/domain/app_colors.dart';
+import 'package:spotifyuiclone/domain/app_routes.dart';
 import 'package:spotifyuiclone/domain/ui_helper.dart';
 import 'package:spotifyuiclone/ui/custom_widgets/my_custom_rounded_btn.dart';
 import 'package:spotifyuiclone/ui/custom_widgets/my_rounded_image_card.dart';
@@ -191,7 +192,12 @@ class _ChoosePodcastScreenState extends State<ChoosePodcastScreen> {
                         child: Center(
                           child: MyCustomRoundedBtn(
                             mWidth: 100,
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.pushNamed(
+                                context,
+                                AppRoutes.dashboardScreen,
+                              );
+                            },
                             text: "Done",
                           ),
                         ),

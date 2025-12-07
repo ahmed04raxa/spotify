@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:spotifyuiclone/ui/create_account/create_account_screen.dart';
+import 'package:spotifyuiclone/ui/dashboard/dashboard_screen.dart';
 import 'package:spotifyuiclone/ui/intro/choose_artist_screen.dart';
 import 'package:spotifyuiclone/ui/intro/choose_podcast_screen.dart';
 import 'package:spotifyuiclone/ui/intro/intro_screen.dart';
@@ -11,6 +12,7 @@ class AppRoutes {
   static const String createAccountScreen = "/createAccount";
   static const String chooseArtistScreen = "/chooseArtist";
   static const String choosePodcastScreen = "/choosePodcast";
+  static const String dashboardScreen = "/dashboardScreen";
 
   static Map<String, Widget Function(BuildContext)> getRoutes() => {
     splashScreen: (context) => SplashScreen(),
@@ -18,5 +20,6 @@ class AppRoutes {
     createAccountScreen: (context) => CreateAccountScreen(),
     chooseArtistScreen: (context) => ChooseArtistScreen(),
     choosePodcastScreen: (context) => ChoosePodcastScreen(),
+    dashboardScreen: (context) => DashboardScreen(),
   };
 }
