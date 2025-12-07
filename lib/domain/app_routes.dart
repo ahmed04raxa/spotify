@@ -7,7 +7,7 @@ import 'package:spotifyuiclone/ui/intro/intro_screen.dart';
 import 'package:spotifyuiclone/ui/splash/splash_screen.dart';
 
 class AppRoutes {
-  static const String splashScreen = "/";
+  static const String splashScreen = "/splash";
   static const String introScreen = "/intro";
   static const String createAccountScreen = "/createAccount";
   static const String chooseArtistScreen = "/chooseArtist";

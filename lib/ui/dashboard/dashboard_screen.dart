@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:spotifyuiclone/domain/app_colors.dart';
+import 'package:spotifyuiclone/ui/custom_widgets/my_compact_music_player_widget.dart';
 import 'package:spotifyuiclone/ui/dashboard/navigations/home_bottom_nav.dart';
 import 'package:spotifyuiclone/ui/dashboard/navigations/library_bottom_nav.dart';
 import 'package:spotifyuiclone/ui/dashboard/navigations/search_bottom_nav.dart';
@@ -22,7 +22,23 @@ class _DashboardScreenState extends State<DashboardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: mBottomNavPages[selectedIndex],
+      body: Stack(
+        children: [
+          mBottomNavPages[selectedIndex],
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: MyCompactMusicPlayerWidget(
+              isBluetooth: true,
+              bluetoothName: "BEATSPILL+",
+              songTitle: "From Me to You - Mono / Remastered",
+              albumTitle: "The Beatles",
+              bgColor: Color(0XFF550A1C),
+              thumbnailPath:
+                  "assets/images/Screen Shot 2021-12-08 at 13.39 1.png",
+            ),
+          ),
+        ],
+      ),
       backgroundColor: AppColors.blackColor,
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: AppColors.secondryColor,

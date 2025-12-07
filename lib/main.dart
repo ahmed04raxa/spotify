@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         fontFamily: "regular",
       ),
       routes: AppRoutes.getRoutes(),
-      initialRoute: "/",
+      initialRoute: AppRoutes.dashboardScreen,
     );
   }
 }
