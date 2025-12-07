@@ -4,13 +4,15 @@ class MyRoundedImageCard extends StatelessWidget {
   double mWidth;
   double mHeight;
   String imgPath;
-  bool isSelected;
+  bool isSpotifyOriginal;
+  bool isBlackBg = false;
   MyRoundedImageCard({
     super.key,
     this.mWidth = 100,
     this.mHeight = 100,
     required this.imgPath,
-    this.isSelected = false,
+    this.isSpotifyOriginal = true,
+    this.isBlackBg = true,
   });
 
   @override
@@ -20,20 +22,26 @@ class MyRoundedImageCard extends StatelessWidget {
       height: mHeight,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(11),
-        border: BoxBorder.all(
-          strokeAlign: BorderSide.strokeAlignOutside,
-          color: isSelected ? Colors.white : Colors.transparent,
-          width: isSelected ? 2 : 0,
-        ),
-        
         image: DecorationImage(image: AssetImage(imgPath)),
       ),
-      child: isSelected
-          ? Center(
-              child: CircleAvatar(
-                backgroundColor: Colors.black.withOpacity(0.4),
-                radius: mWidth / 2,
-                child: Icon(Icons.done, color: Colors.white),
+      child: isSpotifyOriginal
+          ? Align(
+              alignment: Alignment.topLeft,
+              child: Container(
+                width: 30,
+                height: 30,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(topLeft: Radius.circular(11)),
+                  color: Colors.white,
+                ),
+                child: Center(
+                  child: Image.asset(
+                    "assets/images/Logo.png",
+                    width: 15,
+                    height: 15,
+                    color: isBlackBg ? Colors.black : Colors.white,
+                  ),
+                ),
               ),
             )
           : Container(),
