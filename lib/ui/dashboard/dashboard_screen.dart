@@ -24,7 +24,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
     return Scaffold(
       body: Stack(
         children: [
-          mBottomNavPages[selectedIndex],
+          Padding(
+            padding: EdgeInsets.only(bottom: 65),
+            child: mBottomNavPages[selectedIndex],
+          ),
           Align(
             alignment: Alignment.bottomCenter,
             child: MyCompactMusicPlayerWidget(
