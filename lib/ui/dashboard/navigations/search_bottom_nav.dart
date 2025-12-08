@@ -11,6 +11,76 @@ class SearchBottomNav extends StatefulWidget {
 }
 
 class _SearchBottomNavState extends State<SearchBottomNav> {
+  List<Map<String, dynamic>> mTopGenreList = [
+    {
+      "imgPath": "assets/images/Screen Shot 2021-12-08 at 13.39 2.png",
+      "name": "Pop",
+    },
+    {
+      "imgPath": "assets/images/Screen Shot 2021-12-08 at 14.16 1.png",
+      "name": "Indie",
+    },
+    {
+      "imgPath": "assets/images/Screen Shot 2021-12-08 at 13.39 2.png",
+      "name": "Pop",
+    },
+    {
+      "imgPath": "assets/images/Screen Shot 2021-12-08 at 13.39 2.png",
+      "name": "Indie",
+    },
+  ];
+  List<Map<String, dynamic>> mPodcastList = [
+    {
+      "imgPath": "assets/images/Screen Shot 2021-12-08 at 14.33 1.png",
+      "name": "News & Politics",
+    },
+    {
+      "imgPath": "assets/images/Screen Shot 2021-12-08 at 14.18 1.png",
+      "name": "Comedy",
+    },
+    {
+      "imgPath": "assets/images/Screen Shot 2021-12-08 at 14.33 1.png",
+      "name": "News & Politics",
+    },
+    {
+      "imgPath": "assets/images/Screen Shot 2021-12-08 at 14.18 1.png",
+      "name": "Comedy",
+    },
+  ];
+  List<Map<String, dynamic>> mBrowseList = [
+    {
+      "imgPath": "assets/images/Screen Shot 2021-12-07 at 14.11 1.png",
+      "name": "2021 Wrapped",
+    },
+    {
+      "imgPath": "assets/images/Screen Shot 2021-12-07 at 12.39 1.png",
+      "name": "Podcasts",
+    },
+    {
+      "imgPath": "assets/images/Screen Shot 2021-12-07 at 14.17 1.png",
+      "name": "Made for you",
+    },
+    {
+      "imgPath": "assets/images/Screen Shot 2021-12-07 at 14.22 1.png",
+      "name": "Made for you",
+    },
+    {
+      "imgPath": "assets/images/Screen Shot 2021-12-07 at 14.11 1.png",
+      "name": "2021 Wrapped",
+    },
+    {
+      "imgPath": "assets/images/Screen Shot 2021-12-07 at 12.39 1.png",
+      "name": "Podcasts",
+    },
+    {
+      "imgPath": "assets/images/Screen Shot 2021-12-07 at 14.17 1.png",
+      "name": "Made for you",
+    },
+    {
+      "imgPath": "assets/images/Screen Shot 2021-12-07 at 14.22 1.png",
+      "name": "Made for you",
+    },
+  ];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -104,12 +174,15 @@ class _SearchBottomNavState extends State<SearchBottomNav> {
           SizedBox(
             height: 120,
             child: ListView.builder(
+              itemCount: mTopGenreList.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (_, index) {
-                return AlbumRowWidget(
-                  thumbnailPath:
-                      "assets/images/Screen Shot 2021-12-08 at 14.33 1.png",
-                  albumName: "Indie",
+                return Padding(
+                  padding:  EdgeInsets.only(right:11),
+                  child: AlbumRowWidget(
+                    thumbnailPath: mTopGenreList[index]['imgPath'],
+                    albumName: mTopGenreList[index]['name'],
+                  ),
                 );
               },
             ),
@@ -137,12 +210,15 @@ class _SearchBottomNavState extends State<SearchBottomNav> {
           SizedBox(
             height: 120,
             child: ListView.builder(
+              itemCount: mPodcastList.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (_, index) {
-                return AlbumRowWidget(
-                  thumbnailPath:
-                      "assets/images/Screen Shot 2021-12-08 at 14.33 1.png",
-                  albumName: "Comedy",
+                return Padding(
+                  padding: EdgeInsets.only(right:11),
+                  child: AlbumRowWidget(
+                    thumbnailPath: mPodcastList[index]['imgPath'],
+                    albumName: mPodcastList[index]['name'],
+                  ),
                 );
               },
             ),
@@ -168,19 +244,19 @@ class _SearchBottomNavState extends State<SearchBottomNav> {
           ),
           mSpacer(),
           GridView.builder(
-            itemCount: 10,
+            itemCount: mBrowseList.length,
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               childAspectRatio: 16 / 9,
               mainAxisSpacing: 11,
+              crossAxisSpacing: 11
             ),
             itemBuilder: (_, index) {
               return AlbumRowWidget(
-                thumbnailPath:
-                    "assets/images/Screen Shot 2021-12-08 at 14.33 1.png",
-                albumName: "Podcasts",
+                thumbnailPath: mBrowseList[index]['imgPath'],
+                albumName: mBrowseList[index]['name'],
               );
             },
           ),
