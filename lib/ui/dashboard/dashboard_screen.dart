@@ -37,7 +37,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
               albumTitle: "The Beatles",
               bgColor: Color(0XFF550A1C),
               thumbnailPath:
-                  "assets/images/Screen Shot 2021-12-08 at 13.39 1.png",
+                  "assets/images/Screen Shot 2021-12-07 at 14.17 1.png",
             ),
           ),
         ],

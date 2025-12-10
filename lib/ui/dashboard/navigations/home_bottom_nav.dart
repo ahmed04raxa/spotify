@@ -57,19 +57,21 @@ class _HomeBottomNavState extends State<HomeBottomNav> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: AppColors.blackColor,
-        body: Column(
-          children: [
-            mSpacer(),
-            recentlyPlayedUi(),
-            mSpacer(mHeight: 14),
-            recentlyPlayedListUi(),
-            mSpacer(),
-            reviewUi(),
-            mSpacer(mHeight: 22),
-            reviewListUi(),
-            mSpacer(),
-            editorsPickUi(),
-          ],
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              mSpacer(),
+              recentlyPlayedUi(),
+              mSpacer(mHeight: 14),
+              recentlyPlayedListUi(),
+              mSpacer(),
+              reviewUi(),
+              mSpacer(mHeight: 22),
+              reviewListUi(),
+              mSpacer(),
+              editorsPickUi(),
+            ],
+          ),
         ),
       ),
     );
@@ -194,6 +196,7 @@ class _HomeBottomNavState extends State<HomeBottomNav> {
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: mReviewListUi.length,
+        physics: NeverScrollableScrollPhysics(),
         itemBuilder: (_, index) {
           return Padding(
             padding: EdgeInsets.symmetric(horizontal: 11),
