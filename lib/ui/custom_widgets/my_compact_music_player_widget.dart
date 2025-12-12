@@ -32,7 +32,12 @@ class _MyCompactMusicPlayerWidgetState
   @override
   void initState() {
     super.initState();
-    getDomaintColor();
+    initializeColorPalette();
+  }
+
+  initializeColorPalette() async {
+    paletteGenerator = await getColorPalette(widget.thumbnailPath);
+    setState(() {});
   }
 
   @override
@@ -138,12 +143,5 @@ class _MyCompactMusicPlayerWidgetState
         ),
       ),
     );
-  }
-
-  getDomaintColor() async {
-    paletteGenerator = await PaletteGenerator.fromImageProvider(
-      AssetImage(widget.thumbnailPath),
-    );
-    setState(() {});
   }
 }
