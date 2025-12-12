@@ -4,8 +4,9 @@ import 'package:palette_generator/palette_generator.dart';
 import 'package:spotifyuiclone/domain/app_colors.dart';
 import 'package:spotifyuiclone/domain/ui_helper.dart';
 import 'package:spotifyuiclone/ui/custom_widgets/my_compact_music_player_widget.dart';
+import 'package:spotifyuiclone/ui/dashboard/library/my_profile_nav_screen.dart';
 import 'package:spotifyuiclone/ui/dashboard/navigations/home_bottom_nav.dart';
-import 'package:spotifyuiclone/ui/dashboard/navigations/library_bottom_nav.dart';
+import 'package:spotifyuiclone/ui/dashboard/library/library_bottom_nav.dart';
 import 'package:spotifyuiclone/ui/dashboard/navigations/search_bottom_nav.dart';
 
 class DashboardScreen extends StatefulWidget {
@@ -24,6 +25,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
     HomeBottomNav(),
     SearchBottomNav(),
     LibraryBottomNav(),
+
   ];
   int selectedIndex = 0;
 
@@ -83,7 +85,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    SvgPicture.asset("assets/svg/Down.svg"),
+                                    InkWell(
+                                        onTap : (){
+                                          Navigator.pop(context);
+                                        },
+                                        child: SvgPicture.asset("assets/svg/Down.svg",width: 50,)),
                                     Text(
                                       "1(Remastered)",
                                       style: TextStyle(

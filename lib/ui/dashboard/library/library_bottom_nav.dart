@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:spotifyuiclone/domain/app_routes.dart';
 import 'package:spotifyuiclone/ui/custom_widgets/my_library_liked_widget.dart';
 import 'package:spotifyuiclone/ui/custom_widgets/type_chipwidget.dart';
-
 import '../../../domain/app_colors.dart';
 import '../../../domain/ui_helper.dart';
 
@@ -122,12 +122,17 @@ class _LibraryBottomNavState extends State<LibraryBottomNav> {
         children: [
           Container(
             decoration: BoxDecoration(shape: BoxShape.circle),
-            child: CircleAvatar(
-              radius: 20,
-              child: Image.asset(
-                "assets/images/image 2.png",
-                width: 200,
-                height: 200,
+            child: InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, AppRoutes.profileScreen);
+              },
+              child: CircleAvatar(
+                radius: 20,
+                child: Image.asset(
+                  "assets/images/image 2.png",
+                  width: 200,
+                  height: 200,
+                ),
               ),
             ),
           ),
